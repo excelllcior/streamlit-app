@@ -1,16 +1,18 @@
 from app import calculate_relatives, calculate_average, get_average_relatives_from_file
 
+
 class TestCalculateRelatives:
 
     def test_calculate_all_relatives(self):
-        row = {'SibSp': '2', 'Parch': '3'}
+        row = {"SibSp": "2", "Parch": "3"}
         result = calculate_relatives(row)
         assert result == 5
 
     def test_calculate_only_siblings(self):
-        row = {'SibSp': '4', 'Parch': '0'}
+        row = {"SibSp": "4", "Parch": "0"}
         result = calculate_relatives(row)
         assert result == 4
+
 
 class TestCalculateAverage:
 
@@ -23,6 +25,7 @@ class TestCalculateAverage:
         list = []
         average = calculate_average(list)
         assert average == 0
+
 
 class TestGetAverageRelativesFromFile:
 
